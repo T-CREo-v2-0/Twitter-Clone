@@ -12,9 +12,18 @@ app.use(router);
 
 
 
+async function main () {
+    console.log("starting server");
 
-app.listen(PORT, ()=>{
-    dbConnect();
-    console.log("server on port" , `http://localhost:${PORT}`);
+    try {
+        dbConnect();
+        app.listen(PORT);
+        console.log('Server on portt ', `http://localhost:${PORT}`)
+    
 
-});
+    } catch (error) {
+        console.log("no se pudo connetar a la base de datos", error);
+    }
+}
+
+main();
