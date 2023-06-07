@@ -1,6 +1,3 @@
-# Exclude .env files
-.env
-# Exclude node_modules directory
 node_modules/
-# Exclude package-lock.json file
-package-lock.json
+.env/
+dist/
