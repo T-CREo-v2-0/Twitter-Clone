@@ -1,5 +1,6 @@
 import "./App.css";
-import Tweet from "./components/tweets";
+
+import Tweet from "./components/tweets.tsx";
 
 const tweets = [
   {
@@ -21,7 +22,7 @@ const tweets = [
     username: "shawn",
     user_id: "",
     tweet: "sos",
-    tweet_id: "123456789",
+    tweet_id: "9999999",
     day: "12",
     month: "May",
     year: "2020",
@@ -31,24 +32,26 @@ const tweets = [
   },
 ];
 
+
 function App() {
-  return (
-    <div className="App">
-      {tweets.map((tweet) => (
-        <Tweet
-          name={tweet.name}
-          username={tweet.username}
-          tweet={tweet.tweet}
-          day={tweet.day}
-          month={tweet.month}
-          year={tweet.year}
-          retweets={tweet.retweets}
-          likes={tweet.likes}
-          replies={tweet.replies}
-        />
-      ))}
+    return (
+      <div className="App">
+        {tweets.map((tweet) => (
+          <Tweet
+            name={tweet.name}
+            username={tweet.username}
+            tweet={tweet.tweet}
+            tweet_id={tweet.tweet_id}
+            day={tweet.day}
+            month={tweet.month}
+            year={tweet.year}
+            retweets={tweet.retweets}
+            likes={tweet.likes}
+            replies={tweet.replies}
+          />
+        ))}
     </div>
-  );
+    )
 }
 
 export default App;

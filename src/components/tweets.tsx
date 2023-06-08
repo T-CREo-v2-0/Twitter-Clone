@@ -1,8 +1,11 @@
 import "../styles/tweets.css";
+import  { NavLink } from 'react-router-dom';
+
 
 type TweetProps = {
   name: string;
   username: string;
+  tweet_id: string;
   tweet: string;
   day: string;
   month: string;
@@ -13,24 +16,27 @@ type TweetProps = {
 };
 
 function Tweet(props: TweetProps) {
+
   return (
-    <a href="#" className="text-black">
-      <div className="w-full bg-white mb-4 rounded-xl overflow-hidden max-w-xl min-w-xl">
+    <div className="w-full bg-white mb-4 rounded-xl overflow-hidden max-w-xl min-w-xl">
+    <NavLink to={`/${props.username}/${props.tweet_id}`}>
         <div className="flex border-b border-solid border-grey-light">
           <div className="w-1/8 text-right pl-3 pt-3">
             <div>
-              <a href="#">
+              <NavLink to={`/${props.username}`}>
                 <div className="rounded-full h-12 w-12 mr-2 bg-red-400"></div>
-              </a>
+              </NavLink>
             </div>
           </div>
           <div className="w-7/8 p-3 pl-0">
             <div className="flex justify-between">
               <div>
                 <span className="text-black">
-                  <a href="#" className="text-black">
+                  <NavLink to={`/${props.username}`} style={({ isActive }) => ({
+                  color: isActive ? '#000' : '#000',
+                  })}>
                     <strong>{props.name} </strong>
-                  </a>
+                  </NavLink>
                 </span>
                 <span className="text-black">@{props.username}</span>
                 <span className="text-black"> &middot; </span>
@@ -44,7 +50,7 @@ function Tweet(props: TweetProps) {
               {props.tweet}
             </div>
 
-            <div className="pb-2 text-center">
+            <div className="pb-2 text-center justify-center align-center">
               <span className="mr-8">
                 <a
                   href="#"
@@ -72,8 +78,8 @@ function Tweet(props: TweetProps) {
             </div>
           </div>
         </div>
-      </div>
-    </a>
+    </NavLink>
+    </div>
   );
 }
 
