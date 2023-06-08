@@ -1,6 +1,5 @@
-import "./App.css";
-
-import Tweet from "./components/tweets.tsx";
+import Tweet from "../components/Tweet.js";
+import "../styles/timeline.css";
 
 const tweets = [
   {
@@ -32,26 +31,25 @@ const tweets = [
   },
 ];
 
-
-function App() {
-    return (
-      <div className="App">
-        {tweets.map((tweet) => (
-          <Tweet
-            name={tweet.name}
-            username={tweet.username}
-            tweet={tweet.tweet}
-            tweet_id={tweet.tweet_id}
-            day={tweet.day}
-            month={tweet.month}
-            year={tweet.year}
-            retweets={tweet.retweets}
-            likes={tweet.likes}
-            replies={tweet.replies}
-          />
-        ))}
+function Timeline() {
+  return (
+    <div className="Timeline">
+      {tweets.map((tweet) => (
+        <Tweet
+          name={tweet.name}
+          username={tweet.username}
+          tweet={tweet.tweet}
+          tweet_id={tweet.tweet_id}
+          day={tweet.day}
+          month={tweet.month}
+          year={tweet.year}
+          retweets={tweet.retweets}
+          likes={tweet.likes}
+          replies={tweet.replies}
+        />
+      ))}
     </div>
-    )
+  );
 }
 
-export default App;
+export default Timeline;

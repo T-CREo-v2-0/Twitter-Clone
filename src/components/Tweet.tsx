@@ -1,6 +1,6 @@
 import "../styles/tweets.css";
-import  { NavLink } from 'react-router-dom';
-
+import { NavLink } from "react-router-dom";
+import avatar from "../assets/img/avatar.png";
 
 type TweetProps = {
   name: string;
@@ -16,7 +16,6 @@ type TweetProps = {
 };
 
 function Tweet(props: TweetProps) {
-
   return (
     <div className="w-full bg-white mb-4 rounded-xl overflow-hidden max-w-xl min-w-xl">
     <NavLink to={`/${props.username}/status/${props.tweet_id}`}>
@@ -24,7 +23,9 @@ function Tweet(props: TweetProps) {
           <div className="w-1/8 text-right pl-3 pt-3">
             <div>
               <NavLink to={`/${props.username}`}>
-                <div className="rounded-full h-12 w-12 mr-2 bg-red-400"></div>
+                <div className="h-12 w-12 mr-2">
+                  <img alt="avatar" src={avatar} className="rounded-full" />
+                </div>
               </NavLink>
             </div>
           </div>
@@ -32,9 +33,12 @@ function Tweet(props: TweetProps) {
             <div className="flex justify-between">
               <div>
                 <span className="text-black">
-                  <NavLink to={`/${props.username}`} style={({ isActive }) => ({
-                  color: isActive ? '#000' : '#000',
-                  })}>
+                  <NavLink
+                    to={`/${props.username}`}
+                    style={({ isActive }) => ({
+                      color: isActive ? "#000" : "#000",
+                    })}
+                  >
                     <strong>{props.name} </strong>
                   </NavLink>
                 </span>
@@ -78,7 +82,7 @@ function Tweet(props: TweetProps) {
             </div>
           </div>
         </div>
-    </NavLink>
+      </NavLink>
     </div>
   );
 }
