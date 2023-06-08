@@ -19,7 +19,7 @@ function Tweet(props: TweetProps) {
 
   return (
     <div className="w-full bg-white mb-4 rounded-xl overflow-hidden max-w-xl min-w-xl">
-    <NavLink to={`/${props.username}/${props.tweet_id}`}>
+    <NavLink to={`/${props.username}/status/${props.tweet_id}`}>
         <div className="flex border-b border-solid border-grey-light">
           <div className="w-1/8 text-right pl-3 pt-3">
             <div>
