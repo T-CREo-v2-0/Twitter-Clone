@@ -42,20 +42,24 @@ function UserProfile() {
         </button>
       </div>
       <div className="container text-black">
-        <h1 className="text-4xl font-bold">Profile of {id}</h1>
+        <div className="text-center mb-5">
+          <h1 className="text-3xl font-bold text-slate-600">
+            Profile of @{id}
+          </h1>
+        </div>
         <div>
           {tweets.map((tweet: any) => (
-          <Tweet
-            avatar={tweet.user.profile_image_url_https}
-            name={tweet.user.name}
-            username={tweet.user.screen_name}
-            tweet={tweet.text}
-            tweet_id={tweet.id}
-            time={tweet.created_at}
-            retweets={tweet.retweet_count}
-            likes={tweet.favorite_count}
-            replies={"100"}
-          />
+            <Tweet
+              avatar={tweet.user.profile_image_url_https}
+              name={tweet.user.name}
+              username={tweet.user.screen_name}
+              tweet={tweet.text}
+              tweet_id={tweet.id}
+              time={tweet.created_at}
+              retweets={tweet.retweet_count}
+              likes={tweet.favorite_count}
+              replies={"100"}
+            />
           ))}
         </div>
       </div>

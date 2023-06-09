@@ -15,9 +15,9 @@ async function main() {
   try {
     dbConnect();
     app.listen(PORT);
-    console.log("Server on portt ", `http://localhost:${PORT}`);
+    console.log("Server on port ", `http://localhost:${PORT}`);
   } catch (error) {
-    console.log("no se pudo connetar a la base de datos", error);
+    console.log("Error connecting to the database: ", error);
   }
 }
 
