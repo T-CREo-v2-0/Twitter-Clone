@@ -61,9 +61,7 @@ function Timeline() {
           username={tweet.user.screen_name}
           tweet={tweet.text}
           tweet_id={tweet.id}
-          day={tweet.created_at.substring(8, 10)}
-          month={tweet.created_at.substring(4, 7)}
-          year={tweet.created_at.substring(26, 30)}
+          time={tweet.created_at}
           retweets={tweet.retweet_count}
           likes={tweet.favorite_count}
           replies={'100'}
