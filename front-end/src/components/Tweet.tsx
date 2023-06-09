@@ -1,5 +1,5 @@
 import "../styles/tweets.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type TweetProps = {
   avatar: string;
@@ -18,7 +18,7 @@ type TweetProps = {
 function Tweet(props: TweetProps) {
   return (
     <div className="w-full bg-white mb-4 rounded-xl overflow-hidden max-w-xl min-w-xl">
-    <NavLink to={`/${props.username}/status/${props.tweet_id}`}>
+    <Link to={`/${props.username}/status/${props.tweet_id}`}>
         <div className="flex border-b border-solid border-grey-light">
           <div className="w-1/8 text-right pl-3 pt-3">
             <div>
@@ -50,8 +50,10 @@ function Tweet(props: TweetProps) {
               </div>
             </div>
 
-            <div className="mb-4 text-black text-left flex justify-between">
-              {props.tweet}
+            <div data-testid='tweetText' lang='es' className="mb-4 text-black text-left flex justify-between">
+              <span>
+                {props.tweet}
+              </span>
             </div>
 
             <div className="pb-2 text-center justify-center align-center">
@@ -82,7 +84,7 @@ function Tweet(props: TweetProps) {
             </div>
           </div>
         </div>
-      </NavLink>
+      </Link>
     </div>
   );
 }

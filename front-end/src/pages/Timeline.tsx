@@ -58,7 +58,7 @@ function Timeline() {
         <Tweet
           avatar={tweet.user.profile_image_url_https}
           name={tweet.user.name}
-          username={tweet.user.screenname}
+          username={tweet.user.screen_name}
           tweet={tweet.text}
           tweet_id={tweet.id}
           day={tweet.created_at.substring(8, 10)}
