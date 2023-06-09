@@ -22,7 +22,9 @@ function Tweet(props: TweetProps) {
             <div className="flex border-b border-solid border-grey-light">
               <div className="w-1/8 text-right pl-3 pt-3">
                 <div>
-                  <NavLink to={`/${props.username}`}>
+                  <NavLink
+                    to={`/${props.username}`}
+                  >
                     <div className="h-12 w-12 mr-2">
                       <img
                         alt="avatar"

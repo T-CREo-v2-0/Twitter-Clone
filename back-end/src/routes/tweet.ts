@@ -9,6 +9,6 @@ export const router = Router();
 router.get("/", getTweets);
 
 /**
- * http://localhost:3005/tweet/#IDUSER
+ * http://localhost:3005/tweet/#USERNAME
  */
-router.get("/:id", getTweetsUser);
+router.get("/:username", getTweetsUser);

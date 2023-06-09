@@ -4,7 +4,7 @@ import { getAllTweets, getTweetsByUser } from "../services/tweets";
 
 export const getTweets = async (req: Request, res: Response) => {
   try {
-    const limit = req.body.limit || 10;
+    const limit = parseInt(req.query.limit as string) || 10;
     const responseTweets = await getAllTweets(limit);
     res.json(responseTweets);
   } catch (error) {
@@ -14,9 +14,9 @@ export const getTweets = async (req: Request, res: Response) => {
 
 export const getTweetsUser = async (req: Request, res: Response) => {
   try {
-    const id: string = req.params.id;
-    const limit = req.body.limit || 10;
-    const tweets = await getTweetsByUser(id, limit);
+    const username: string = req.params.username;
+    const limit = parseInt(req.query.limit as string) || 10;
+    const tweets = await getTweetsByUser(username, limit);
     return res.json(tweets);
   } catch (error) {
     handledHttps(res);

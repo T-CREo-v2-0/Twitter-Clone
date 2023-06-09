@@ -11,19 +11,21 @@ export default class TwitterDB {
 
   async getTweets(limit: number) {
     const response = await this.client.get("/tweet", {
-      data: {
+      params: {
+        limit: limit,
+      },
+    });
+    console.log(response.data);
+    return response.data;
+  }
+
+  async getTweetsUser(username: string, limit: number) {
+    const response = await this.client.get(`/tweet/${username}`, {
+      params: {
         limit: limit,
       },
     });
     return response.data;
   }
 
-  async getTweetsUser(id: string, limit: number) {
-    const response = await this.client.get(`/tweet/${id}`, {
-      data: {
-        limit: limit,
-      },
-    });
-    return response.data;
-  }
 }
