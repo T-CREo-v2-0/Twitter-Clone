@@ -1,7 +1,8 @@
 import { TweetDocument } from "../interfaces/tweet.interfaces";
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
 
-const tweetSchema = new Schema<TweetDocument>({
+const tweetSchema = new Schema<TweetDocument>(
+  {
     created_at: { type: String, required: true },
     id: { type: Number, required: true },
     id_str: { type: String, required: true },
@@ -103,12 +104,13 @@ const tweetSchema = new Schema<TweetDocument>({
     favorited: { type: Boolean, required: true },
     retweeted: { type: Boolean, required: true },
     lang: { type: String, required: true },
-  }, 
+  },
   {
     timestamps: false,
-    collection: 'Tweet'
-  });
-  
-  const TweetModel = mongoose.model<TweetDocument>('Tweet', tweetSchema);
-  
-  export default TweetModel;
+    collection: "Tweet",
+  }
+);
+
+const TweetModel = mongoose.model<TweetDocument>("Tweet", tweetSchema);
+
+export default TweetModel;
