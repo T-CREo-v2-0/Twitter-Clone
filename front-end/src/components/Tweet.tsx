@@ -1,8 +1,8 @@
 import "../styles/tweets.css";
 import { NavLink } from "react-router-dom";
-import avatar from "../assets/img/avatar.png";
 
 type TweetProps = {
+  avatar: string;
   name: string;
   username: string;
   tweet_id: string;
@@ -24,7 +24,7 @@ function Tweet(props: TweetProps) {
             <div>
               <NavLink to={`/${props.username}`}>
                 <div className="h-12 w-12 mr-2">
-                  <img alt="avatar" src={avatar} className="rounded-full" />
+                  <img alt="avatar" src={props.avatar} className="rounded-full" />
                 </div>
               </NavLink>
             </div>
