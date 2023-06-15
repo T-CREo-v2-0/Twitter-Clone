@@ -23,17 +23,21 @@ function Timeline() {
 
   return (
     <div className="Timeline">
-      {tweets.map((tweet: any) => (
+      {tweets.map((t: any) => (
         <Tweet
-          avatar={tweet.user.profile_image_url_https}
-          name={tweet.user.name}
-          username={tweet.user.screen_name}
-          tweet={tweet.text}
-          tweet_id={tweet.id}
-          time={tweet.created_at}
-          retweets={tweet.retweet_count}
-          likes={tweet.favorite_count}
-          replies={"100"}
+          key={t.id}
+          tweet={{
+            avatar: t.user.profile_image_url_https,
+            name: t.user.name,
+            username: t.user.screen_name,
+            tweet: t.text,
+            tweet_id: t.id,
+            time: t.created_at,
+            retweets: t.retweet_count,
+            likes: t.favorite_count,
+            replies: "100",
+            language: t.lang,
+          }}
         />
       ))}
     </div>
