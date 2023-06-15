@@ -1,5 +1,6 @@
 import "../styles/tweets.css";
 import { Link, NavLink } from "react-router-dom";
+import avatar from "../assets/img/avatar.png";
 
 interface TweetProps {
   tweet: {
@@ -30,6 +31,10 @@ function Tweet({ tweet }: TweetProps) {
                       <img
                         alt="avatar"
                         src={tweet.avatar}
+                        onError={(e: any) => {
+                          e.target.onerror = null;
+                          e.target.src = avatar;
+                        }}
                         className="rounded-full"
                       />
                     </div>
