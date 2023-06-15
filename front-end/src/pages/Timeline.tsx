@@ -35,7 +35,7 @@ function Timeline() {
             time: t.created_at,
             retweets: t.retweet_count,
             likes: t.favorite_count,
-            replies: "100",
+            replies: Math.floor(Math.random() * 100).toString(),
             language: t.lang,
           }}
         />
