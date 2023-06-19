@@ -56,7 +56,7 @@ function UserProfile() {
                 name: t.user.name,
                 username: t.user.screen_name,
                 tweet: t.text,
-                tweet_id: t.id,
+                tweet_id: t.id_str,
                 time: t.created_at,
                 retweets: t.retweet_count,
                 likes: t.favorite_count,

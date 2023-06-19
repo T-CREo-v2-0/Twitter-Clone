@@ -12,7 +12,7 @@ function Timeline() {
   // Get tweets from database
   const [tweets, setTweets]: any = useState([]);
   useEffect(() => {
-    client.getTweets(30).then((res) => {
+    client.getTweets(5).then((res) => {
       console.log(res);
       setTweets(res);
       setIsLoading(false);
@@ -31,7 +31,7 @@ function Timeline() {
             name: t.user.name,
             username: t.user.screen_name,
             tweet: t.text,
-            tweet_id: t.id,
+            tweet_id: t.id_str,
             time: t.created_at,
             retweets: t.retweet_count,
             likes: t.favorite_count,
