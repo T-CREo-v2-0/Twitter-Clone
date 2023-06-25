@@ -21,7 +21,7 @@ function UserProfile() {
   // Get tweets from database
   const [tweets, setTweets]: any = useState([]);
   useEffect(() => {
-    client.getTweetsUser(id as string, 30).then((res) => {
+    client.getTweetsUser(id as string, 5).then((res) => {
       console.log(res);
       setTweets(res);
       setIsLoading(false);
@@ -42,7 +42,7 @@ function UserProfile() {
         </button>
       </div>
       <div className="container text-black">
-        <div className="text-center mb-5">
+        <div className="text-center my-5">
           <h1 className="text-3xl font-bold text-slate-600">
             Profile of @{id}
           </h1>
@@ -60,7 +60,7 @@ function UserProfile() {
                 time: t.created_at,
                 retweets: t.retweet_count,
                 likes: t.favorite_count,
-                replies: "100",
+                replies: Math.floor(Math.random() * t.favorite_count).toString(),
                 language: t.lang,
               }}
             />
