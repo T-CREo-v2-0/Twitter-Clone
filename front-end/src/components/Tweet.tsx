@@ -23,7 +23,7 @@ function Tweet({ tweet }: TweetProps) {
       <Link to={`/${tweet.username}/status/${tweet.tweet_id}`} state={tweet}>
         <div data-testid="tweet" className="[data-testid=tweet]">
           <div>
-            <div className="flex border-b border-solid border-grey-light">
+            <div className="flex border-b border-solid border-grey-light w-full">
               <div className="w-1/8 text-right pl-3 pt-3">
                 <div>
                   <NavLink to={`/${tweet.username}`}>
@@ -41,7 +41,7 @@ function Tweet({ tweet }: TweetProps) {
                   </NavLink>
                 </div>
               </div>
-              <div className="w-7/8 p-3 pl-0">
+              <div className="p-3 pl-0 w-full">
                 <div className="flex justify-between">
                   <div>
                     <span className="text-black">
