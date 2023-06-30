@@ -57,12 +57,15 @@ function Tweet({ tweet }: TweetProps) {
                     <span className="text-black">@{tweet.username}</span>
                     <span className="text-black"> &middot; </span>
                     <span className="text-black">
-                      <a href={`/${tweet.username}/status/${tweet.tweet_id}`} className="text-black hover:no-underline hover:underline hover:text-gray">
-                      <time dateTime={tweet.time}>
-                        {tweet.time.substring(4, 10) +
-                          ", " +
-                          tweet.time.substring(tweet.time.length - 4)}
-                      </time>
+                      <a
+                        href={`/${tweet.username}/status/${tweet.tweet_id}`}
+                        className="text-black hover:no-underline hover:underline hover:text-gray"
+                      >
+                        <time dateTime={tweet.time}>
+                          {tweet.time.substring(4, 10) +
+                            ", " +
+                            tweet.time.substring(tweet.time.length - 4)}
+                        </time>
                       </a>
                     </span>
                   </div>

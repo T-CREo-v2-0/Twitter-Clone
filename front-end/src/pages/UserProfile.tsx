@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Tweet from "../components/Tweet";
 import Spinner from "../components/Spinner";
 import TwitterDB from "../api/client";
@@ -9,12 +10,6 @@ const client = new TwitterDB();
 
 function UserProfile() {
   const { id } = useParams();
-
-  const navigate = useNavigate();
-
-  const navigateToHome = () => {
-    navigate("/");
-  };
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,26 +21,26 @@ function UserProfile() {
       setTweets(res);
       setIsLoading(false);
     });
-  }, []);
+  }, [id]);
 
   if (isLoading) return <Spinner />;
 
   return (
     <div className="text-black">
       <div className="absolute left-10 top-10">
-        <button
-          className="bg-transparent hover:bg-slate-600 text-slate-600 font-semibold hover:text-white py-2 px-4 border border-slate-600 hover:border-transparent rounded"
-          type="button"
-          onClick={navigateToHome}
+        <NavLink
+          to="/"
+          className="text-black hover:no-underline hover:underline hover:text-[#1DA1F2]"
         >
-          Back to Timeline
-        </button>
+          ⮌ Timeline
+        </NavLink>
       </div>
       <div className="container text-black">
-        <div className="text-center my-5">
+        <div className="text-center my-5 ">
           <h1 className="text-3xl font-bold text-slate-600">
             Profile of @{id}
           </h1>
+          <div className="Cred-Mean">{""}</div>
         </div>
         <div>
           {tweets.map((t: any) => (
@@ -60,7 +55,9 @@ function UserProfile() {
                 time: t.created_at,
                 retweets: t.retweet_count,
                 likes: t.favorite_count,
-                replies: Math.floor(Math.random() * t.favorite_count).toString(),
+                replies: Math.floor(
+                  Math.random() * t.favorite_count
+                ).toString(),
                 language: t.lang,
               }}
             />
