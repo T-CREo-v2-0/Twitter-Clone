@@ -1,6 +1,6 @@
 # Twitter-Clone
 
-Clon de Twitter implementado para la muestra de la extensión T-CREo.
+Clon de Twitter implementado para la prueba de la extensión T-CREo.
 
 ## Integrantes
 
@@ -20,8 +20,8 @@ Clon de Twitter implementado para la muestra de la extensión T-CREo.
 Se requiere de Node v18.16.0 para correr el proyecto.
 
 Dentro de la carpeta `backend` y `frontend` se tiene que instalar las dependencias.
-### Instalación de dependencias
 
+### Instalación de dependencias
 
 ```bash
 npm install
