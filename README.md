@@ -27,6 +27,15 @@ Dentro de la carpeta `backend` y `frontend` se tiene que instalar las dependenci
 npm install
 ```
 
+Dentro de la carpeta `backend` se debe crear un archivo `.env` con las siguientes variables de entorno:
+
+```bash
+PORT = 3005
+DB_URI= "mongodb+srv:..."
+```
+
+Donde `DB_URI` es la URI de la base de datos de MongoDB que simula los tweets de Twitter.
+
 ### Correr el proyecto en modo de desarrollo
 
 ```bash
